@@ -20,6 +20,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: baseline;
+    /* height: 120px; */
 }
 .icon{
     height: 1cm;
@@ -67,6 +68,8 @@
     font-size: 40px;
     border-radius: 10px;
     padding: 5px;
+    margin-top: -12px;
+    /* margin-bottom: -5px; */
 }
 .contactInfo{
     font-weight: bold;
