@@ -10,7 +10,7 @@ export default class DonutMaker {
         this.donutCount = 1;
 
         this.autoClicker = 0;
-        this.autoClickerCost = 10;
+        this.autoClickerCost = 100;
 
         this.multiplier = 0;
         this.multiplierCost = 10;
