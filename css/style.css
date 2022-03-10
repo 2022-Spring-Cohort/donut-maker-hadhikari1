@@ -1,13 +1,10 @@
-
 .container{
     display: grid;
     grid-template-areas: 
     'header'
     'main'
     'footer'; 
-    gap: 3em;
-    /* background-image: url(./images/background.jpg);
-    background-size: cover; */
+    gap: 2em;
     font-family: 'Bangers', cursive;
     font-family: 'Sansita Swashed', cursive;
 }
@@ -53,8 +50,8 @@
 }
 .dropdown-content p:hover {
     background-color: grey;
-}
-  
+} 
+
 .dropdown:hover .dropdownContent {
     display: block;
     }
@@ -67,7 +64,7 @@
 .companyName{
     font-size: 40px;
     border-radius: 10px;
-    padding: 10px;
+    padding: 5px;
 }
 .contactInfo{
     font-weight: bold;
@@ -101,6 +98,22 @@
     flex-wrap: wrap;
     justify-content: space-around;
 }
+/* .autoClicker h2{
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.clickMultiplier h2{
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+} */
+.gameView h2{
+    text-align: center;
+}
 .click{
     display: flex;
     flex-direction: column;
@@ -120,6 +133,52 @@
 .clickChangers{
     display: flex;
     flex-direction: column;
+    border: solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+.purchase{
+    background-color: grey;
+    border: solid black;
+    border-radius: 10px;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.ownedMultiplier{
+    font-size: 40px;
+    margin-right: 10px;
+    margin-top: -5px;
+    margin-bottom: -5px;
+}
+.ownedAutoclicker{
+    margin-right: 10px;
+    font-size: 40px;
+    margin-top: -5px;
+    margin-bottom: -5px;
+}
+.clickerIcon{
+    height: 50px;
+    padding-top: 5px;
+}
+.moneyIcon{
+    height: 20px;
+}
+.clickerPrice{
+    margin-left: 5px;
+    margin-top: -2px;
+    margin-bottom: 5px;
+}
+.counter{
+    display: flex;
+    flex-direction: row;
+}
+.multiplierPrice{
+    margin-left: 5px;
+    margin-top: -2px;
+    margin-bottom: 5px;
 }
 .gameReset{
     color: white;
@@ -128,7 +187,9 @@
     border-radius: 10px;
     padding: 10px;
     width: px;
+    margin-top: 20px;
 }
+
 .footer{
     grid-area: footer;
     text-align: center;
