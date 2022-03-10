@@ -4,9 +4,11 @@
     'header'
     'main'
     'footer'; 
-    gap: .2em;
+    /* gap: .2em; */
     font-family: 'Bangers', cursive;
     font-family: 'Sansita Swashed', cursive;
+    /* min-height: 100vh;
+    min-width: 100vh; */
 }
 .headerNav{
     grid-area: header;
@@ -76,9 +78,9 @@
 }
 .images{
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
-    margin-top: 10px;
-    margin-top: 10px;
+    margin: 20px;
 }
 .images:hover{
     opacity: .7;

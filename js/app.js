@@ -74,3 +74,11 @@ resetGame.addEventListener("click", () =>{
 })
 
 
+setInterval(()=>{
+    donutMaker.donutClick = donutMaker.donutClick + (donutMaker.autoClicker *  Math.pow(1.2, donutMaker.multiplier));
+    const donuctCount = document.querySelector(".donutCount");
+    donuctCount.innerText = " Donut Counts: " + donutMaker.getDonutCount();
+    donutMaker.updateAutoClicker();
+    donutMaker.updateMultiplier();
+     updateView();
+},1000);

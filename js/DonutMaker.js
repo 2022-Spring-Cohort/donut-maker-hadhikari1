@@ -3,12 +3,6 @@ export default class DonutMaker {
     constructor() {
         this.resetGame();
 
-        setInterval(()=>{
-            this.donutClick = this.donutClick + (this.autoClicker *  Math.pow(1.2, this.multiplier));
-            const donuctCount = document.querySelector(".donutCount");
-            donuctCount.innerText = " Donut Counts: " + this.getDonutCount();
-           
-        },1000);
     }
 
     resetGame() {
@@ -16,7 +10,7 @@ export default class DonutMaker {
         this.donutCount = 1;
 
         this.autoClicker = 0;
-        this.autoClickerCost = 100;
+        this.autoClickerCost = 10;
 
         this.multiplier = 0;
         this.multiplierCost = 10;
@@ -67,7 +61,6 @@ export default class DonutMaker {
                 donutClick: this.donutClick, count: this.getDonutCount(),
             };
         }
-        
     }
 
     updateAutoClicker() {
