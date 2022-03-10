@@ -9,12 +9,19 @@ export default class DonutMaker {
 
         this.multiplier = 0;
         this.multiplierCost = 10;
-        this.donutMultiplierCount = 1.2;
         this.donutEarnedPerClick = 1;
 
         this.autoClickerEnabled = false;
         this.clickMultiplierEnabled = false; 
+
+        setInterval(()=>{
+            this.donutClick = this.donutClick + (this.autoClicker *  Math.pow(1.2, this.multiplier));
+            const donuctCount = document.querySelector(".donutCount");
+            donuctCount.innerText = " Donut Counts: " + this.getDonutCount();
+           
+        },1000);
     }
+
 
     addDonut() {
         if(this.multiplier > 0){
@@ -50,25 +57,14 @@ export default class DonutMaker {
     purchaseAutoClicker(){
         if(this.getDonutCount() >= this.autoClickerCost) {
             this.donutClick = this.donutClick - this.autoClickerCost; 
-            this.addAutoClicker();
-            this.increaseAutoClickerCost();
+            this.autoClicker++; 
+            this.autoClickerCost = this.autoClickerCost + (this.autoClickerCost * 0.1);
             return { autoClicker: this.autoClicker, 
                 autoClickerCost: Math.round(this.autoClickerCost), 
                 donutClick: this.donutClick, count: this.getDonutCount(),
             };
         }
         
-    }
-
-    incremenatDonutCountWithAutoClicker() {
-        if(this.autoClicker > 0){
-            setInterval(()=>{
-                this.donutClick = this.donutClick + this.autoClicker;
-                const donuctCount = document.querySelector(".click");
-                donuctCount.innerHTML = "<h2> Donut Counts: " + this.getDonutCount() + "</h2>"
-            },1000);
-        } 
-        this.updateAutoClicker();
     }
 
     updateAutoClicker() {
@@ -91,15 +87,20 @@ export default class DonutMaker {
     increaseMultiplierCost() {
         this.multiplierCost = this.multiplierCost + (this.multiplierCost * 0.1)
     }
+
+    donutEarnedPerClickWithMultiplier() {
+        this.donutEarnedPerClick = Math.pow(1.2, this.multiplier);
+    }
     
     purchaseMultiplier() {
         if(this.getDonutCount() >= this.multiplierCost){
             this.donutClick = this.donutClick - this.multiplierCost;
-            this.addMultiplier();
-            this.increaseMultiplierCost();
+            this.multiplier++;
+            this.multiplierCost = this.multiplierCost + (this.multiplierCost * 0.1);
+            this.donutEarnedPerClick = Math.pow(1.2, this.multiplier);
         }
         return {donutCount: this.donutClick, addMultiplier: this.multiplier,
-            costMultiplier: this.increaseMultiplierCost(), earnedPerClick: this.donutEarnedPerClickWithMultiplier()
+            costMultiplier: this.multiplierCost, earnedPerClick: this.donutEarnedPerClick
         }
     }
 
@@ -111,11 +112,7 @@ export default class DonutMaker {
             this.clickMultiplierEnabled = false;
         }
     }
-
-    donutEarnedPerClickWithMultiplier() {
-        this.donutEarnedPerClick = Math.pow(1.2, this.multiplier);
-    }
-
+    
     resetGame() {
         this.donutClick = 0;
         this.donutCount = 1;

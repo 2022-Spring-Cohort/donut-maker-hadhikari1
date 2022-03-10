@@ -12,7 +12,7 @@ donutCollector.addEventListener("click", () => {
 function updateView(){
     const count = donutMaker.getDonutCount();
     const donuctCount = document.querySelector(".click");
-    donuctCount.innerHTML = "<h2> Donut Counts: " + count + "</h2>";
+    donuctCount.innerHTML = '<h2 class="donutCount"> Donut Counts: ' + count + '</h2>';
     
     const donutEarnedPerClick = document.createElement("p");
     donutEarnedPerClick.className = "donutPerClick";
@@ -53,13 +53,16 @@ function updateView(){
 const buyAutoClicker = document.querySelector(".autoClicker");
 buyAutoClicker.addEventListener("click", () =>{
     donutMaker.purchaseAutoClicker();
-    donutMaker.incremenatDonutCountWithAutoClicker();
+    donutMaker.updateMultiplier();
+    donutMaker.updateAutoClicker();
     updateView();
 })
 
 const buyDonutMultiplier = document.querySelector(".clickMultiplier");
 buyDonutMultiplier.addEventListener("click", () =>{
     donutMaker.purchaseMultiplier();
+    donutMaker.updateMultiplier();
+    donutMaker.updateAutoClicker();
     updateView();
 })
 

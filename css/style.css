@@ -4,7 +4,7 @@
     'header'
     'main'
     'footer'; 
-    gap: 2em;
+    gap: .2em;
     font-family: 'Bangers', cursive;
     font-family: 'Sansita Swashed', cursive;
 }
@@ -97,6 +97,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    background-color: lightcoral;
+    padding: 20px;
 }
 /* .autoClicker h2{
     background-color: black;
@@ -117,6 +119,10 @@
 .click{
     display: flex;
     flex-direction: column;
+}
+.donutPerClick{
+    margin-top:-20px;
+    text-align: center;
 }
 #img{
     height: 300px;
