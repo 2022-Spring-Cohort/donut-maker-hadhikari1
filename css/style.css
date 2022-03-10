@@ -97,24 +97,11 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    background-color: lightcoral;
     padding: 20px;
 }
-/* .autoClicker h2{
-    background-color: black;
-    color: white;
-    padding: 5px;
-    border-radius: 10px;
-}
-
-.clickMultiplier h2{
-    background-color: black;
-    color: white;
-    padding: 5px;
-    border-radius: 10px;
-} */
-.gameView h2{
+.gameView{
     text-align: center;
+    padding: 20px;
 }
 .click{
     display: flex;
@@ -127,6 +114,7 @@
 #img{
     height: 300px;
     animation: rotation 8s infinite linear;
+    justify-content: center;
 }
 @keyframes rotation {
     from {
@@ -142,6 +130,7 @@
     border: solid black;
     border-radius: 10px;
     padding: 10px;
+    margin: 20px;
 }
 .purchase{
     background-color: grey;
@@ -201,4 +190,43 @@
     text-align: center;
     background-color: black;
     color: white;
+}
+
+
+@media screen and (max-width: 700px) {
+    .grid-container {
+        grid-template-areas: 
+        'header'
+        'main'
+        'footer';
+    }
+    .main{
+        flex-direction: column;
+    }
+    #img{
+        height: 200px;
+    }
+    .click{
+        justify-content: center;
+    }
+    .clickChangers{
+        margin-top: 20px;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .grid-container {
+        grid-template-areas: 
+        'header'
+        'main'
+        'footer';
+    }
+    .header{
+        flex-direction: row;
+    }
+    .main{
+        flex-direction: column;
+    }
+   
 }
